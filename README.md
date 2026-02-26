@@ -55,7 +55,7 @@ We have structured this workshop using the [4C model](https://www.bowperson.com/
 
 ## Contributors
 - Nils Durieux (https://github.com/nilsdx)
-- Joakim Baynaud (https://github.com/Alexiisgrd)
+- Joakim Baynaud (https://github.com/joakimbaynaud)
 - Mathias de Castro (https://github.com/mathiasdecastro)
 - Alexis Gairaud (https://github.com/Alexiisgrd)
 - Alexandre Sans (https://github.com/SilverSWP)

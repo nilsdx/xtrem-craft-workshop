@@ -22,7 +22,7 @@ jobs:
         run: uv python install
       
       - name: Install dependencies
-        run: uv pip install -r requierements.txt
+        run: uv pip install -r requirements.txt
 
       - name: Execute linter
         run: uv run ruff check .

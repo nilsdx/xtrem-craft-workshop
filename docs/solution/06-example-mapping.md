@@ -33,10 +33,10 @@ Vous pouvez également joindre une photo du résultat obtenu en utilisant les po
 
 Exemple: (post-it vert)
 
-- [ ] Étant donné un portfolio vide, lorsque je veux évaluer mon portfolio, alors la banque me renvoie 0.
-- [ ] Étant donné un portfolio vide, lorsque je veux ajouter 10 EUR à mon portfolio, alors le portfolio a désormais 10 EUR.
-- [ ] Étant donné un portfolio contenant 10 EUR et une banque qui n'a pas de taux de change, lorsque je veux évaluer mon portfolio en USD, alors on me renvoie une erreur.
-- [ ] Étant donné un portfolio contenant 10 EUR et une banque qui a un taux de change EUR vers USD de 1, lorsque je veux évaluer mon portfolio en USD, alors on me renvoie 10 USD.
+- [x] Étant donné un portfolio vide, lorsque je veux évaluer mon portfolio, alors la banque me renvoie 0.
+- [x] Étant donné un portfolio vide, lorsque je veux ajouter 10 EUR à mon portfolio, alors le portfolio a désormais 10 EUR.
+- [x] Étant donné un portfolio contenant 10 EUR et une banque qui n'a pas de taux de change, lorsque je veux évaluer mon portfolio en USD, alors on me renvoie une erreur.
+- [x] Étant donné un portfolio contenant 10 EUR et une banque qui a un taux de change EUR vers USD de 1, lorsque je veux évaluer mon portfolio en USD, alors on me renvoie 10 USD.
 
 ## Image
 ![Example Mapping](../img/our-example-mapping.jpg)

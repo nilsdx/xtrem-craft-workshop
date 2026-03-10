@@ -1,0 +1,32 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  uv:
+    name: python
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./python
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install python
+        uses: uv python install 3.11
+      
+      - name: Install dependencies
+        uses: uv pip install -r requierements.txt
+
+      - name: Execute linter
+        uses: uv run ruff check .
+
+      - name: Execute Python test
+        uses: uv run pytest
+      

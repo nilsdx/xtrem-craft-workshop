@@ -29,6 +29,12 @@ jobs:
 
       - name: Execute linter
         run: uv run ruff check .
+      
+      - name: Execute format linter
+        run: uv run ruff format
+
+      - name: Execute fix linter
+        run: uv run ruff check --fix
 
       - name: Execute Python test
         run: uv run pytest

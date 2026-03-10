@@ -43,3 +43,14 @@ class TestPortfolio:
             portfolio.evaluate(Currency.USD, bank)
 
         assert str(error.value) == "EUR->USD"
+
+    def test_portfolio_contains_10_eur_and_5_usd_when_evaluate_in_usd(self):
+        portfolio = Portfolio()
+        bank = Bank.createNewExchangeRate(Currency.EUR, Currency.USD, 1.2)
+        
+        portfolio.add(10, Currency.EUR)
+        portfolio.add(5, Currency.USD)
+
+        eval = portfolio.evaluate(Currency.USD, bank)
+
+        assert(eval == 17)

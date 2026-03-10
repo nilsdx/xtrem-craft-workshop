@@ -5,17 +5,22 @@ from .bank import Bank
 
 class Portfolio:
     def __init__(self):
+        self.values = {}
         self.value = 0
         self.currency = Currency.EUR
 
     def evaluate(self, currency: Currency, bank: Bank):
+        newValue = 0
         try:
-            newValue = bank.convert(self.value, self.currency, currency)
+            for key_currency in self.values.keys():
+                newValue += bank.convert(self.values[key_currency], key_currency, currency)
         except MissingExchangeRateError as e:
-            print("ALEXANDRE")
             raise e
 
         return newValue
 
     def add(self, amount: int, currency: Currency):
-        self.value += amount
+        if currency in self.values.keys():
+            self.values[currency] += amount
+        else:
+            self.values[currency] = amount

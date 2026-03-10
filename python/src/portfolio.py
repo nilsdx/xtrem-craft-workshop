@@ -13,7 +13,7 @@ class Portfolio:
         newValue = 0
         try:
             for key_currency in self.values.keys():
-                newValue += bank.convert(
+                newValue += bank.convertCurrency(
                     self.values[key_currency], key_currency, currency
                 )
         except MissingExchangeRateError as e:

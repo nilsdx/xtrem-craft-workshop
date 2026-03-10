@@ -19,14 +19,14 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Install python
-        uses: uv python install
+        run: uv python install
       
       - name: Install dependencies
-        uses: uv pip install -r requierements.txt
+        run: uv pip install -r requierements.txt
 
       - name: Execute linter
-        uses: uv run ruff check .
+        run: uv run ruff check .
 
       - name: Execute Python test
-        uses: uv run pytest
+        run: uv run pytest
       

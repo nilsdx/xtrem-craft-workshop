@@ -1,6 +1,5 @@
 from typing import Dict
 
-from currency import Currency
 from .currency import Currency
 from .missing_exchange_rate_error import MissingExchangeRateError
 

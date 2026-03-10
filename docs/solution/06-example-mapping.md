@@ -33,11 +33,15 @@ Vous pouvez également joindre une photo du résultat obtenu en utilisant les po
 
 Exemple: (post-it vert)
 
+- [ ] Étant donné un portfolio vide, lorsque je veux évaluer mon portfolio, alors la banque me renvoie 0.
+- [ ] Étant donné un portfolio vide, lorsque je veux ajouter 10 EUR à mon portfolio, alors le portfolio a désormais 10 EUR.
+- [ ] Étant donné un portfolio contenant 10 EUR et une banque qui n'a pas de taux de change, lorsque je veux évaluer mon portfolio en USD, alors on me renvoie une erreur.
+- [ ] Étant donné un portfolio contenant 10 EUR et une banque qui a un taux de change EUR vers USD de 1, lorsque je veux évaluer mon portfolio en USD, alors on me renvoie 10 USD.
+
+
 - [ ] Étant donné un portfolio et une banque qui n'a uniquement un taux de change de EUR to USD
 Lorsque je tente de convertir mes EUR en KWR la banque me renvoie un message de refus
-- [ ] Etant donné un portfolio et une banque avec un taux d'échange EUR et USD de 1.2. Lorsque je veux ajouter 12 KWR, alors la banque refuse l'ajout
-
-- [ ] 5 USD + 10 EUR = 17 USD
+- [ ] Étant donné un portfolio avec 5 et une banque avec un taux de change5 USD + 10 EUR = 17 USD
 
 ## Image
 ![Example Mapping](../img/our-example-mapping.jpg)

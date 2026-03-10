@@ -1,5 +1,4 @@
 import pytest
-import re
 
 from src.bank import Bank
 from src.currency import Currency
@@ -11,7 +10,7 @@ class TestBank:
         # arrange
         bank = Bank.createNewExchangeRate(Currency.EUR, Currency.USD, 1.2)
         # act
-        result = bank.convert(10, Currency.EUR, Currency.USD)
+        result = bank.convertCurrency(10, Currency.EUR, Currency.USD)
         # assert
         assert result == 12
 
@@ -19,7 +18,7 @@ class TestBank:
         # arrange
         bank = Bank.createNewExchangeRate(Currency.EUR, Currency.USD, 1.2)
         # act
-        result = bank.convert(10, Currency.EUR, Currency.EUR)
+        result = bank.convertCurrency(10, Currency.EUR, Currency.EUR)
         # assert
         assert result == 10
 
@@ -28,7 +27,7 @@ class TestBank:
         bank = Bank.createNewExchangeRate(Currency.EUR, Currency.USD, 1.2)
         # act
         with pytest.raises(MissingExchangeRateError) as error:
-            bank.convert(10, Currency.EUR, Currency.KRW)
+            bank.convertCurrency(10, Currency.EUR, Currency.KRW)
         # assert
         assert str(error.value) == "EUR->KRW"
 
@@ -36,13 +35,11 @@ class TestBank:
         # arrange
         bank: Bank = Bank.createNewExchangeRate(Currency.EUR, Currency.USD, 1.2)
         # act
-        result = bank.convert(10, Currency.EUR, Currency.USD)
+        result = bank.convertCurrency(10, Currency.EUR, Currency.USD)
         # assert
         assert result == 12
 
         # act
         bank.addExchangeRate(Currency.EUR, Currency.USD, 1.3)
         # assert
-        assert bank.convert(10, Currency.EUR, Currency.USD) == 13
-
-    
+        assert bank.convertCurrency(10, Currency.EUR, Currency.USD) == 13

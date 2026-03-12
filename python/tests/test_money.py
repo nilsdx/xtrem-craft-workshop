@@ -1,6 +1,5 @@
-from python.src.currency import Currency
-from python.src.money import Money
-from python.src.money_calculator import MoneyCalculator
+from xterm_craft_workshop.currency import Currency
+from xterm_craft_workshop.money_calculator import MoneyCalculator
 
 
 class TestMoney:

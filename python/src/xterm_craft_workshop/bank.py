@@ -31,8 +31,8 @@ class Bank:
             raise MissingExchangeRateError(money.currency, toCurrency)
         return (
             Money(money.value, money.currency) 
-            if money.value == toCurrency.value
-            else Money(money.value * self._exchange_rate[f"{money.currency}->{toCurrency.value}"], toCurrency)
+            if money.currency == toCurrency
+            else Money(money.value * self._exchange_rate[f"{money.currency.value}->{toCurrency.value}"], toCurrency)
         )
 
     def canConvert(self, fromCurrency: Currency, toCurrency: Currency) -> bool:

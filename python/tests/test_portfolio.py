@@ -3,8 +3,8 @@ import pytest
 from xterm_craft_workshop.bank import Bank
 from xterm_craft_workshop.currency import Currency
 from xterm_craft_workshop.missing_exchange_rate_error import MissingExchangeRateError
-from xterm_craft_workshop.portfolio import Portfolio
 from xterm_craft_workshop.money import Money
+from xterm_craft_workshop.portfolio import Portfolio
 
 
 class TestPortfolio:

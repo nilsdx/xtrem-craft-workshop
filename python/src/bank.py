@@ -1,6 +1,7 @@
 from typing import Dict
 
 from .currency import Currency
+from .money import Money
 from .missing_exchange_rate_error import MissingExchangeRateError
 
 
@@ -25,15 +26,14 @@ class Bank:
         self._exchange_rate[f"{fromCurrency.value}->{toCurrency.value}"] = rate
 
     def convertCurrency(
-        self, amount: float, fromCurrency: Currency, toCurrency: Currency
-    ) -> float:
-        if not (self.canConvert(fromCurrency, toCurrency)):
-            raise MissingExchangeRateError(fromCurrency, toCurrency)
+        self, money: Money, toCurrency: Currency
+    ) -> Money:
+        if not (self.canConvert(money.currency, toCurrency)):
+            raise MissingExchangeRateError(money.currency, toCurrency)
         return (
-            amount
-            if fromCurrency.value == toCurrency.value
-            else amount
-            * self._exchange_rate[f"{fromCurrency.value}->{toCurrency.value}"]
+            Money(money.value, money.currency) 
+            if money.value == toCurrency.value
+            else Money(money.value * self._exchange_rate[f"{money.currency}->{toCurrency.value}"], toCurrency)
         )
 
     def canConvert(self, fromCurrency: Currency, toCurrency: Currency) -> bool:

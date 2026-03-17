@@ -1,13 +1,12 @@
 from .bank import Bank
 from .currency import Currency
 from .missing_exchange_rate_error import MissingExchangeRateError
+from .money import Money
 
 
 class Portfolio:
     def __init__(self):
         self.values = {}
-        self.value = 0
-        self.currency = Currency.EUR
 
     def evaluatePortfolio(self, currency: Currency, bank: Bank):
         newValue = 0
@@ -21,8 +20,8 @@ class Portfolio:
 
         return newValue
 
-    def addMoney(self, amount: int, currency: Currency):
-        if currency in self.values.keys():
-            self.values[currency] += amount
+    def addMoney(self, money: Money):
+        if money.currency in self.values.keys():
+            self.values[money.currency] += money.value
         else:
-            self.values[currency] = amount
+            self.values[money.currency] = money.value

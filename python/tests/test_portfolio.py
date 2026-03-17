@@ -4,6 +4,7 @@ from python.src.bank import Bank
 from python.src.currency import Currency
 from python.src.missing_exchange_rate_error import MissingExchangeRateError
 from python.src.portfolio import Portfolio
+from python.src.money import Money
 
 
 class TestPortfolio:
@@ -19,7 +20,7 @@ class TestPortfolio:
         portfolio = Portfolio()
         bank = Bank({})
 
-        portfolio.addMoney(10, Currency.EUR)
+        portfolio.addMoney(Money(10, Currency.EUR))
         eval = portfolio.evaluatePortfolio(Currency.EUR, bank)
 
         assert eval == 10
@@ -29,7 +30,7 @@ class TestPortfolio:
         bank = Bank({})
         bank.addExchangeRate(Currency.EUR, Currency.USD, 1.2)
 
-        portfolio.addMoney(10, Currency.EUR)
+        portfolio.addMoney(Money(10, Currency.EUR))
         eval = portfolio.evaluatePortfolio(Currency.USD, bank)
 
         assert eval == 12
@@ -37,7 +38,7 @@ class TestPortfolio:
     def test_portfolio_contains_10_eur_when_evaluate_in_usd_without_exchange_rate(self):
         portfolio = Portfolio()
         bank = Bank({})
-        portfolio.addMoney(10, Currency.EUR)
+        portfolio.addMoney(Money(10, Currency.EUR))
 
         with pytest.raises(MissingExchangeRateError) as error:
             portfolio.evaluatePortfolio(Currency.USD, bank)
@@ -48,8 +49,8 @@ class TestPortfolio:
         portfolio = Portfolio()
         bank = Bank.createNewExchangeRate(Currency.EUR, Currency.USD, 1.2)
 
-        portfolio.addMoney(10, Currency.EUR)
-        portfolio.addMoney(5, Currency.USD)
+        portfolio.addMoney(Money(10, Currency.EUR))
+        portfolio.addMoney(Money(5, Currency.USD))
 
         eval = portfolio.evaluatePortfolio(Currency.USD, bank)
 

@@ -40,3 +40,9 @@ class TestMoney:
         res = money2 - money1
 
         assert res == Money(5, Currency.EUR)
+    
+    def test_divide_euro_to_euro_returns_euro(self):
+        money = Money(value=10,currency=Currency.EUR)
+        res = money / 2
+
+        assert res == Money(value=5,currency=Currency.EUR)

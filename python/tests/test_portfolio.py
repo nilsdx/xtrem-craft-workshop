@@ -55,3 +55,10 @@ class TestPortfolio:
         eval = portfolio.evaluatePortfolio(Currency.USD, bank)
 
         assert eval == 17
+
+    def test_add_same_currency_values_euro(self):
+        portfolio = Portfolio()
+        portfolio.addMoney(Money(10, Currency.EUR))
+        portfolio.addMoney(Money(15, Currency.EUR))
+
+        assert portfolio.values[Currency.EUR] == 25

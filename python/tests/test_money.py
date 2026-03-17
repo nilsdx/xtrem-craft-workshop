@@ -1,4 +1,6 @@
 from python.src.money_calculator import MoneyCalculator
+from python.src.money import Money
+from python.src.currency import Currency
 
 
 class TestMoney:
@@ -11,3 +13,18 @@ class TestMoney:
 
     def test_divide_in_korean_won_returns_float(self):
         assert MoneyCalculator.divide(4002, 4) == 1000.5
+
+    def test_add_euro_to_euro_returns_euro(self):
+        money1 = Money(value=5, currency=Currency.EUR)
+        money2 = Money(value=10, currency=Currency.EUR)
+
+        res = money1 + money2
+
+        assert res == Money(15, Currency.EUR)
+
+    def test_multiply_euro_to_euro_returns_euro(self):
+        money = Money(value=5, currency=Currency.EUR)
+
+        res = money * 3
+
+        assert res == Money(15, Currency.EUR)

@@ -25,6 +25,18 @@ class TestMoney:
     def test_multiply_euro_to_euro_returns_euro(self):
         money = Money(value=5, currency=Currency.EUR)
 
+        res = 3 * money
+
+        assert res == Money(15, Currency.EUR)
+
         res = money * 3
 
         assert res == Money(15, Currency.EUR)
+
+    def test_substract_euro_to_euro_returns_euro(self):
+        money1 = Money(value=5, currency=Currency.EUR)
+        money2 = Money(value=10, currency=Currency.EUR)
+
+        res = money2 - money1
+
+        assert res == Money(5, Currency.EUR)

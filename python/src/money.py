@@ -4,7 +4,7 @@ from .currency import Currency
 
 @dataclass(frozen=True, init=True, eq=True)
 class Money:
-    value: int
+    value: float
     currency: Currency
 
     def __add__(self, other: Self):
@@ -18,3 +18,7 @@ class Money:
     
     def __sub__(self, other : Self):
         return Money(self.value - other.value,self.currency)
+    
+    def __truediv__(self, other : int):
+        return Money(self.value / other, self.currency)
+        

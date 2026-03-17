@@ -22,7 +22,7 @@ class TestMoney:
 
         assert res == Money(15, Currency.EUR)
 
-    def test_multiply_euro_to_euro_returns_euro(self):
+    def test_multiply_euro_to_int_returns_euro(self):
         money = Money(value=5, currency=Currency.EUR)
 
         res = 3 * money
@@ -41,7 +41,7 @@ class TestMoney:
 
         assert res == Money(5, Currency.EUR)
     
-    def test_divide_euro_to_euro_returns_euro(self):
+    def test_divide_euro_to_int_returns_euro(self):
         money = Money(value=10,currency=Currency.EUR)
         res = money / 2
 

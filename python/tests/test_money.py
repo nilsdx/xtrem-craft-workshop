@@ -1,6 +1,6 @@
-from python.src.money_calculator import MoneyCalculator
-from python.src.money import Money
 from python.src.currency import Currency
+from python.src.money import Money
+from python.src.money_calculator import MoneyCalculator
 
 
 class TestMoney:
@@ -40,7 +40,7 @@ class TestMoney:
         res = money2 - money1
 
         assert res == Money(5, Currency.EUR)
-    
+
     def test_divide_euro_to_int_returns_euro(self):
         money = Money(value=10,currency=Currency.EUR)
         res = money / 2

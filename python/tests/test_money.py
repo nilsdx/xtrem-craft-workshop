@@ -1,4 +1,5 @@
 from xterm_craft_workshop.currency import Currency
+from xterm_craft_workshop.money import Money
 from xterm_craft_workshop.money_calculator import MoneyCalculator
 
 

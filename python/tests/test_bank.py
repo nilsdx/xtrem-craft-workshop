@@ -69,4 +69,10 @@ class TestBank:
         # assert
         assert bank.convertCurrency(money, Currency.USD).value == 13
 
-    
+    # def test_no_pivot(self):
+    #     with pytest.raises(ValueError) as error:
+    #         bank = (
+    #             BankBuilder.a_bank()
+    #             .build()
+    #         )
+    #     assert error.value == "Missing pivot"

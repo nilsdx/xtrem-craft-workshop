@@ -8,14 +8,27 @@ from xterm_craft_workshop.money import Money
 class Bank:
     _exchange_rate: Dict[str, float] = {}
 
-    def __init__(self, exchange_rate={}) -> None:
+    def __init__(self, pivot = None, exchange_rate={}) -> None:
         self._exchange_rate = exchange_rate
+        # self._devise_pivot = None
+        # self.devise_pivot = pivot
+
+    # @property
+    # def devise_pivot(self):
+    #     return self._devise_pivot
+
+    # @devise_pivot.setter
+    # def devise_pivot(self, new_devise):
+    #     if self._devise_pivot == None:
+    #         self._devise_pivot = new_devise
+    #     else:
+    #         raise ValueError("Il y a déjà une devise.")
 
     @staticmethod
     def createNewExchangeRate(
         fromCurrency: Currency, toCurrency: Currency, rate: float
     ) -> "Bank":
-        bank = Bank({})
+        bank = Bank()
         bank.addExchangeRate(fromCurrency, toCurrency, rate)
 
         return bank

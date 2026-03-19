@@ -36,3 +36,5 @@ jobs:
       - name: Execute Python test
         run: uv run pytest
       
+      - name: Execute Mutation Tests
+        run: uv run mutmut run

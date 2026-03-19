@@ -86,3 +86,6 @@ So it can be used to evaluate client portfolios
 
 - Quand je convertis un montant égal à 0 alors le résultat est 0  
   Exemple : [] Étant donné une banque avec une devise pivot en EUR et un taux EUR->USD = 1.2 Lorsque je convertis 0 EUR en USD Alors la banque me renvoie 0 USD  
+
+## Image
+![Example Mapping](../img/example_mapping.jpg)

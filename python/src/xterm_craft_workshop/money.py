@@ -12,7 +12,7 @@ class Money:
     def __post_init__(self):
         if self.currency is None:
             raise ValueError("La devise (currency) ne peut pas être None.")
-        
+
         if self.value is None:
             raise ValueError("La valeur (value) ne peut pas être None.")
 
@@ -25,8 +25,8 @@ class Money:
     def __rmul__(self, other: int):
         return Money(self.value * other, self.currency)
 
-    def __sub__(self, other : Self):
-        return Money(self.value - other.value,self.currency)
+    def __sub__(self, other: Self):
+        return Money(self.value - other.value, self.currency)
 
-    def __truediv__(self, other : int):
+    def __truediv__(self, other: int):
         return Money(self.value / other, self.currency)

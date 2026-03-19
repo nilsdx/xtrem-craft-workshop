@@ -8,7 +8,7 @@ from xterm_craft_workshop.money import Money
 class Bank:
     _exchange_rate: Dict[str, float] = {}
 
-    def __init__(self, pivot = None, exchange_rate={}) -> None:
+    def __init__(self, pivot=None, exchange_rate={}) -> None:
         self._exchange_rate = exchange_rate
         # self._devise_pivot = None
         # self.devise_pivot = pivot
@@ -38,17 +38,17 @@ class Bank:
     ) -> None:
         self._exchange_rate[f"{fromCurrency.value}->{toCurrency.value}"] = rate
 
-    def convertCurrency(
-        self, money: Money, toCurrency: Currency
-    ) -> Money:
+    def convertCurrency(self, money: Money, toCurrency: Currency) -> Money:
         if not (self.canConvert(money.currency, toCurrency)):
             raise MissingExchangeRateError(money.currency, toCurrency)
         return (
             Money(money.value, money.currency)
             if money.currency == toCurrency
-            else Money(money.value
-                    * self._exchange_rate[f"{money.currency.value}->{toCurrency.value}"]
-                    , toCurrency)
+            else Money(
+                money.value
+                * self._exchange_rate[f"{money.currency.value}->{toCurrency.value}"],
+                toCurrency,
+            )
         )
 
     def canConvert(self, fromCurrency: Currency, toCurrency: Currency) -> bool:

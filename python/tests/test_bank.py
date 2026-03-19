@@ -26,7 +26,7 @@ class TestBank:
         bank = (
             BankBuilder.a_bank()
             .with_pivot_currency(Currency.EUR)
-            .with_exchange_rate(Currency.USD, 1.2)
+            .with_exchange_rate(Currency.USD, 1)
             .build()
         )
         money = Money(10, Currency.EUR)
@@ -68,3 +68,5 @@ class TestBank:
         bank.addExchangeRate(Currency.EUR, Currency.USD, 1.3)
         # assert
         assert bank.convertCurrency(money, Currency.USD).value == 13
+
+    

@@ -1,5 +1,5 @@
 import pytest
-from xterm_craft_workshop.bank_builder import BankBuilder
+from .bank_builder import BankBuilder
 
 from xterm_craft_workshop.currency import Currency
 from xterm_craft_workshop.missing_exchange_rate_error import MissingExchangeRateError

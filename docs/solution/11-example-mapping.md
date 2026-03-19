@@ -44,7 +44,7 @@ So they can be used to evaluate client portfolios
 - Quand je tente de modifier un taux de change par 0 alors cela me lève une exception  
   Exemple : [] Étant donné une banque avec au moins une devise pivot en EUR Lorsque je tente de modifier un taux de change EUR->USD par 0 Alors cela lève une exception  
 
-- Tous les taux de change sont exprimés depuis la devise pivot vers une autre devise  Quand je crée un taux de change il faut obligatoirement que la devise pivot soit présente
+- Quand je souhaite convertir une somme entre deux devises qui ne sont pas la devise pivot alors la conversion passe par la devise pivot
   Exemple : [] Étant donné une banque avec une devise pivot en EUR Alors un taux EUR->USD = 1.2 signifie que 1 EUR = 1.2 USD  
 
 ---
